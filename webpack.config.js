@@ -27,13 +27,13 @@ module.exports = {
     },
     plugins: [
       new HtmlWebpackPlugin({
-        title: 'My App',
+        title: 'Gwend',
         filename: 'index.html',
         template: './index.html'
       }),
       new MiniCssExtractPlugin({
-        filename: "[name].css",
-        chunkFilename: "[id].css"
+        filename: "[hash].css",
+        chunkFilename: "[hash].css"
       })
     ],
     module:{
@@ -63,6 +63,15 @@ module.exports = {
             MiniCssExtractPlugin.loader,
             'css-loader',
             "sass-loader"
+          ]
+        },
+        {
+          test: /\.(png|jpg|gif)$/,
+          use: [
+            {
+              loader: 'file-loader',
+              options: {}
+            }
           ]
         }
       ]
