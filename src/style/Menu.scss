@@ -1,0 +1,16 @@
+#menu{
+    h1{
+        color: red;
+    } 
+    div{
+        width: 80%;
+        text-align: center;
+        position: absolute;
+        top: 50%;
+        transform: translateY(-50%);
+        left: 0;
+        right: 0;
+        margin-left: auto;
+        margin-right: auto;
+    }
+}

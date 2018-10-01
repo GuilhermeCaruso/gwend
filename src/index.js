@@ -1,9 +1,20 @@
-const gwend = require('./js/gwend');
 import './style/main.scss'
+import GwendRouter from './js/GwendRouter';
+import HelloWorld from './components/HelloWorld'
+import Menu from './components/Menu'
 
 (function () {
+    let routes = new GwendRouter([
+        {
+            name: "Home",
+            path: HelloWorld,
+            hash: ""
+        }
+    ])
+    
     window.addEventListener('hashchange',function () { 
-        gwend.navigateTo(location.hash);
+        routes.navigateTo(location.hash);
     })
-    gwend.init()
+    
+    routes.init();
 }());
